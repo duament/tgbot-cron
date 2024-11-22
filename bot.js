@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 async function forward_message(env, chat_id, from_chat_id, message_id) {
-  const url = `https://api.telegram.org/bot${env.TG_BOT_TOKEN}/sendMessage`
+  const url = `https://api.telegram.org/bot${env.TG_BOT_TOKEN}/forwardMessage`
   const data = {
     chat_id,
     from_chat_id,

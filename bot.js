@@ -27,4 +27,14 @@ export default {
 
     console.log('cron processed')
   },
+
+  async fetch(req, env, ctx) {
+    data = await req.json()
+    if (data.token === env.TG_BOT_TOKEN) {
+      await forward_message(env, env.CHAT_ID, env.FROM_CHAT_ID, env.MESSAGE_ID)
+      return new Response()
+    } else {
+      return new Response('Bad token')
+    }
+  },
 };
